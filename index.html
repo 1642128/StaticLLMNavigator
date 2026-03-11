@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Browser</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <input class="omnibox" placeholder="Search or enter URL…" />
+  </header>
+
+  <aside class="sidebar">
+    <h2>Tabs</h2>
+    <ul class="tab-list">
+      <li class="active">Example.com</li>
+      <li>GitHub</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <iframe
+      src="https://example.com"
+      title="Browser View"
+      sandbox="allow-scripts allow-forms allow-pointer-lock"
+    ></iframe>
+  </main>
+
+  <section class="agent">
+    <div class="agent-header">Agent</div>
+    <div class="agent-messages">
+      <p><strong>Agent:</strong> I’ve opened example.com. What would you like to do?</p>
+    </div>
+    <input class="agent-input" placeholder="Ask the agent…" />
+  </section>
+
+  <footer class="statusbar">
+    Ready.
+  </footer>
+
+</div>
+
+</body>
+</html>
