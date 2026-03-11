@@ -35,15 +35,19 @@ html, body {
 
 
 /* grid */
+:root {
+  --sidebar-width: 240px;
+  --agent-width: 320px;
+}
+
 .app {
   display: grid;
-  grid-template-columns: 240px 1fr 320px;
-  grid-template-rows: 48px 1fr 28px;
-  grid-template-areas:
-    "topbar topbar topbar"
-    "sidebar content agent"
-    "statusbar statusbar statusbar";
-  height: 100vh;
+  grid-template-columns:
+    var(--sidebar-width)
+    4px
+    1fr
+    4px
+    var(--agent-width);
 }
 
 /* ===== TOP BAR ===== */
