@@ -1,0 +1,129 @@
+/* reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: #0f1117;
+  color: #e6e6eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* grid */
+.app {
+  display: grid;
+  grid-template-columns: 240px 1fr 320px;
+  grid-template-rows: 48px 1fr 28px;
+  grid-template-areas:
+    "topbar topbar topbar"
+    "sidebar content agent"
+    "statusbar statusbar statusbar";
+  height: 100vh;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+  grid-area: topbar;
+  background: #151822;
+  border-bottom: 1px solid #262a3a;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.omnibox {
+  width: 100%;
+  height: 30px;
+  background: #0f1117;
+  border: 1px solid #2b2f42;
+  border-radius: 6px;
+  padding: 0 10px;
+  color: #e6e6eb;
+}
+
+/* sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background: #121420;
+  border-right: 1px solid #262a3a;
+  padding: 12px;
+}
+
+.sidebar h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #8b90a7;
+  margin-bottom: 8px;
+}
+
+.tab-list {
+  list-style: none;
+}
+
+.tab-list li {
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #cfd3ff;
+}
+
+.tab-list li.active {
+  background: #1e2140;
+}
+
+/* main content */
+.content {
+  grid-area: content;
+  background: #0b0d14;
+}
+
+.content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+/* agent panel */
+.agent {
+  grid-area: agent;
+  background: #121420;
+  border-left: 1px solid #262a3a;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-header {
+  padding: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid #262a3a;
+}
+
+.agent-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.agent-input {
+  border: none;
+  border-top: 1px solid #262a3a;
+  padding: 10px;
+  background: #0f1117;
+  color: #e6e6eb;
+}
+
+/* status bar */
+.statusbar {
+  grid-area: statusbar;
+  background: #151822;
+  border-top: 1px solid #262a3a;
+  font-size: 12px;
+  padding: 6px 10px;
+  color: #8b90a7;
+}
