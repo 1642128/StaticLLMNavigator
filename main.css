@@ -44,6 +44,57 @@ html, body {
   color: #e6e6eb;
 }
 
+/* tabs */
+.tab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tab {
+  position: relative;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #cfd3ff;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    color 0.2s ease;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 4px;
+  height: 2px;
+  background: #7c8cff;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.tab:hover {
+  background: rgba(124, 140, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.tab:hover::after {
+  transform: scaleX(0.6);
+}
+
+.tab.active {
+  background: #1e2140;
+  color: #ffffff;
+}
+
+.tab.active::after {
+  transform: scaleX(1);
+}
+
 /* sidebar */
 .sidebar {
   grid-area: sidebar;
