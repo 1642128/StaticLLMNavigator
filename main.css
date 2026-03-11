@@ -12,6 +12,28 @@ html, body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* resizers */
+.resizer {
+  width: 4px;
+  cursor: col-resize;
+  background: transparent;
+  position: relative;
+}
+
+.resizer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(124, 140, 255, 0.15);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.resizer:hover::before {
+  opacity: 1;
+}
+
+
 /* grid */
 .app {
   display: grid;
