@@ -1,49 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agent Browser</title>
-  <link rel="stylesheet" href="main.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Static LLM Navigator</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <div class="app">
+    <header class="topbar">
+      <input class="omnibox" placeholder="Search or enter URL…" />
+    </header>
 
-<div class="app">
-
-  <header class="topbar">
-    <input class="omnibox" placeholder="Search or enter URL…" />
-  </header>
-
-  <aside class="sidebar">
-    <h2>Tabs</h2>
+    <aside class="sidebar">
+      <h2>Tabs</h2>
       <ul class="tab-list">
         <li class="tab active">Example.com</li>
         <li class="tab">GitHub</li>
-        <li class="tab">Docs</li>
       </ul>
-  </aside>
+    </aside>
 
-  <main class="content">
-    <iframe
-      src="https://example.com"
-      title="Browser View"
-      sandbox="allow-scripts allow-forms allow-pointer-lock"
-    ></iframe>
-  </main>
+    <div class="resizer resizer-sidebar"></div>
 
-  <section class="agent">
-    <div class="agent-header">Agent</div>
-    <div class="agent-messages">
-      <p><strong>Agent:</strong> I’ve opened example.com. What would you like to do?</p>
-    </div>
-    <input class="agent-input" placeholder="Ask the agent…" />
-  </section>
+    <main class="content">
+      <iframe class="webview" src="https://example.com"></iframe>
+    </main>
 
-  <footer class="statusbar">
-    Ready.
-  </footer>
+    <div class="resizer resizer-agent"></div>
 
-</div>
+    <section class="agent">
+      <div class="agent-header">
+        Agent
+        <span class="pill" id="modelStatus">Loading…</span>
+      </div>
+      <div class="agent-messages" id="messages"></div>
+      <input class="agent-input" id="agentInput" placeholder="Ask the agent…" />
+    </section>
 
+    <footer class="statusbar" id="statusbar">Ready.</footer>
+  </div>
+
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
